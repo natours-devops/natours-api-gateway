@@ -1,7 +1,6 @@
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
-const { decode } = require("punycode");
 
 const AUTH_SERVICE_URL =
   process.env.AUTH_SERVICE_URL || "http://localhost:3001";
@@ -14,7 +13,6 @@ const PUBLIC_ROUTES = [
   { method: "POST", path: /^\/api\/v1\/users\/forgotPassword$/ },
   { method: "PATCH", path: /^\/api\/v1\/users\/resetPassword\// },
   { method: "GET", path: /^\/api\/v1\/tours/ },
-  { method: "GET", path: /^\/api\/v1\/reviews/ },
 ];
 
 const isPublic = (req) =>
