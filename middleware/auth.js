@@ -51,6 +51,9 @@ module.exports = async (req, res, next) => {
 
     req.headers["x-user-id"] = data.data.id;
     req.headers["x-user-role"] = data.data.role;
+    req.headers["x-user-email"] = data.data.email;
+
+    console.log(data);
 
     next();
   } catch (err) {
