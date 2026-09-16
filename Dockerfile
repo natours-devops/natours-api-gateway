@@ -14,8 +14,6 @@ USER node
 # Copy application source
 COPY --chown=node:node . . 
 
-# Set production environment
-ENV NODE_ENV=production
 
 EXPOSE 3000
 
