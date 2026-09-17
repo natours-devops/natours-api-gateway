@@ -2,8 +2,7 @@ const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const axios = require("axios");
 
-const AUTH_SERVICE_URL =
-  process.env.AUTH_SERVICE_URL || "http://localhost:3001";
+const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL;
 
 // Routes that do NOT require authentication
 const PUBLIC_ROUTES = [
@@ -52,7 +51,6 @@ module.exports = async (req, res, next) => {
     req.headers["x-user-id"] = data.data.id;
     req.headers["x-user-role"] = data.data.role;
     req.headers["x-user-email"] = data.data.email;
-
 
     next();
   } catch (err) {

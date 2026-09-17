@@ -42,10 +42,10 @@ app.use(cookieParser());
 app.use(authMiddleware);
 
 // Route traffic to microservices
-const AUTH_URL = process.env.AUTH_SERVICE_URL || "http://localhost:3001";
-const TOUR_URL = process.env.TOUR_SERVICE_URL || "http://localhost:3002";
-const REVIEW_URL = process.env.REVIEW_SERVICE_URL || "http://localhost:3003";
-const BOOKING_URL = process.env.BOOKING_SERVICE_URL || "http://localhost:3004";
+const AUTH_URL = process.env.AUTH_SERVICE_URL
+const TOUR_URL = process.env.TOUR_SERVICE_URL 
+const REVIEW_URL = process.env.REVIEW_SERVICE_URL
+const BOOKING_URL = process.env.BOOKING_SERVICE_URL
 
 app.use("/api/v1/users", proxy(AUTH_URL));
 app.use("/api/v1/tours", proxy(TOUR_URL));
